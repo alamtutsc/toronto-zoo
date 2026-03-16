@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Audio Clips</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            text-align: center;
+            background-color: #f0f0f0;
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 40px;
+        }
+        
+        .audio-button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 20px 40px;
+            margin: 10px;
+            font-size: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+            width: 250px;
+            transition: background-color 0.3s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .audio-button:hover {
+            background-color: #45a049;
+        }
+        
+        .audio-button.playing {
+            background-color: #ff4444;
+        }
+        
+        .button-description {
+            color: #666;
+            margin-top: 5px;
+            font-size: 14px;
+        }
+        
+        .status {
+            margin-top: 30px;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 5px;
+            display: none;
+        }
+        
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎵 My Audio Collection</h1>
+        
+        <!-- Button 1 -->
+        <div>
+            <button class="audio-button" onclick="playAudio('clip1.mp3', this)">
+                Play Clip 1
+            </button>
+            <div class="button-description">Funny sound effect</div>
+        </div>
+        
+        <!-- Button 2 -->
+        <div>
+            <button class="audio-button" onclick="playAudio('clip2.mp3', this)">
+                Play Clip 2
+            </button>
+            <div class="button-description">Music sample</div>
+        </div>
+        
+        <!-- Button 3 -->
+        <div>
+            <button class="audio-button" onclick="playAudio('clip3.mp3', this)">
+                Play Clip 3
+            </button>
+            <div class="button-description">Voice recording</div>
+        </div>
+        
+        <!-- Status message (hidden by default) -->
+        <div id="status" class="status"></div>
+    </div>
+
+    <script>
+        // Create an audio player
+        let currentAudio = null;
+        let currentButton = null;
+        
+        function playAudio(filename, button) {
+            // Get the status div
+            let status = document.getElementById('status');
+            
+            // If there's already audio playing, stop it
+            if (currentAudio) {
+                currentAudio.pause();
+                if (currentButton) {
+                    currentButton.classList.remove('playing');
+                    currentButton.textContent = currentButton.textContent.replace('🔴 Playing', '').trim();
+                }
+            }
+            
+            // Create new audio element
+            currentAudio = new Audio('audio/' + filename);
+            currentButton = button;
+            
+            // Play the audio
+            currentAudio.play().then(() => {
+                button.classList.add('playing');
+                button.textContent = '🔴 Playing ' + button.textContent.replace('Play', '').trim();
+                status.style.display = 'block';
+                status.innerHTML = 'Now playing: ' + filename;
+            }).catch(error => {
+                status.style.display = 'block';
+                status.innerHTML = '❌ Error playing audio. Make sure the file exists in the audio folder.';
+                console.error('Audio playback failed:', error);
+            });
+            
+            // When audio ends
+            currentAudio.onended = function() {
+                button.classList.remove('playing');
+                button.textContent = button.textContent.replace('🔴 Playing', 'Play').trim();
+                status.style.display = 'none';
+                currentAudio = null;
+                currentButton = null;
+            };
+        }
+    </script>
+</body>
+</html>
