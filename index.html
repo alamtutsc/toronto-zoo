@@ -2,6 +2,9 @@
 <html>
 <head>
     <title>conservation of the snakes or sum</title>
+    <!-- Add this meta tag for proper mobile scaling -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -11,11 +14,11 @@
             text-align: center;
             /* Change background to image */
             background-image: url('snakebg.jpg');
-            background-size: cover;  /* Makes image cover entire background */
-            background-position: center;  /* Centers the image */
-            background-repeat: no-repeat;  /* Prevents image from tiling */
-            background-attachment: fixed;  /* Keeps image fixed when scrolling */
-            min-height: 100vh;  /* Ensures background covers full height */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            min-height: 100vh;
         }
         
         h1 {
@@ -86,9 +89,64 @@
             background-color: white;
             padding: 40px;
             border-radius: 20px;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.2);  /* Slightly darker shadow */
-            /* Optional: add a semi-transparent background instead of solid white */
-            /* background-color: rgba(255, 255, 255, 0.95); */  /* 95% opaque white */
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+        
+        /* ===== MOBILE-SPECIFIC STYLES ===== */
+        /* These only apply on screens smaller than 600px (phones) */
+        @media screen and (max-width: 600px) {
+            body {
+                margin: 20px auto;  /* Less margin on top/bottom */
+                padding: 10px;  /* Less padding on sides */
+            }
+            
+            h1 {
+                font-size: 28px;  /* Slightly smaller title */
+                margin-bottom: 20px;
+            }
+            
+            .container {
+                padding: 25px;  /* Less padding inside box */
+                border-radius: 15px;
+                width: 100%;  /* Take full width */
+                box-sizing: border-box;  /* Include padding in width calculation */
+            }
+            
+            .audio-button {
+                width: 100%;  /* Buttons take full width on mobile */
+                max-width: none;  /* Remove the 300px limit */
+                padding: 20px 30px;  /* Slightly smaller padding */
+                font-size: 18px;  /* Slightly smaller text */
+                margin: 10px 0;  /* Vertical margin only */
+            }
+            
+            .intro-paragraph, 
+            .bottom-paragraph {
+                font-size: 14px;  /* Smaller text on mobile */
+                padding: 0 10px;
+            }
+            
+            .button-description {
+                font-size: 14px;
+                margin-bottom: 20px;
+            }
+        }
+        
+        /* ===== EXTRA SMALL PHONES ===== */
+        /* For very small phones (less than 400px) */
+        @media screen and (max-width: 400px) {
+            h1 {
+                font-size: 24px;
+            }
+            
+            .container {
+                padding: 15px;
+            }
+            
+            .audio-button {
+                padding: 15px 20px;
+                font-size: 16px;
+            }
         }
     </style>
 </head>
