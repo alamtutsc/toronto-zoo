@@ -5,7 +5,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            max-width: 600px;
+            max-width: 800px;  /* Made this bigger */
             margin: 50px auto;
             padding: 20px;
             text-align: center;
@@ -14,19 +14,41 @@
         
         h1 {
             color: #333;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
+            font-size: 32px;
+        }
+        
+        /* New style for the intro paragraph */
+        .intro-paragraph {
+            color: #555;
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            padding: 0 20px;
+            font-style: italic;
+        }
+        
+        /* New style for the bottom paragraph */
+        .bottom-paragraph {
+            color: #555;
+            font-size: 15px;
+            line-height: 1.6;
+            margin-top: 30px;
+            padding: 20px;
+            border-top: 2px solid #f0f0f0;
+            font-weight: bold;
         }
         
         .audio-button {
             background-color: #4CAF50;
             border: none;
             color: white;
-            padding: 20px 40px;
-            margin: 10px;
-            font-size: 18px;
+            padding: 25px 50px;  /* Made buttons bigger */
+            margin: 15px;  /* More space between buttons */
+            font-size: 20px;  /* Bigger text */
             border-radius: 10px;
             cursor: pointer;
-            width: 250px;
+            width: 300px;  /* Wider buttons */
             transition: background-color 0.3s;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
@@ -42,35 +64,45 @@
         .button-description {
             color: #666;
             margin-top: 5px;
-            font-size: 14px;
+            margin-bottom: 15px;
+            font-size: 15px;
         }
         
         .status {
             margin-top: 30px;
-            padding: 10px;
+            padding: 15px;
             background-color: #fff;
             border-radius: 5px;
             display: none;
+            font-size: 16px;
+            border: 1px solid #ddd;
         }
         
         .container {
             background-color: white;
-            padding: 30px;
-            border-radius: 15px;
+            padding: 40px;  /* More padding inside the box */
+            border-radius: 20px;  /* Slightly more rounded corners */
             box-shadow: 0 8px 16px rgba(0,0,0,0.1);
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Conservation of the snakes</h1>
+        <h1>🐍 Conservation of the Snakes 🐍</h1>
+        
+        <!-- TOP PARAGRAPH - Add your text here -->
+        <div class="intro-paragraph">
+            🌿 Welcome to our snake conservation page! Here you'll find three audio clips 
+            about different snake species and why they're important to protect. 
+            Click the buttons below to learn more. 🌿
+        </div>
         
         <!-- Button 1 -->
         <div>
             <button class="audio-button" onclick="playAudio('Button 1.m4a', this)">
                 Play Clip 1
             </button>
-            <div class="button-description">placeholder - conservation one</div>
+            <div class="button-description">The importance of snake conservation</div>
         </div>
         
         <!-- Button 2 -->
@@ -78,7 +110,7 @@
             <button class="audio-button" onclick="playAudio('Buttonn2.m4a', this)">
                 Play Clip 2
             </button>
-            <div class="button-description">placeholder - conservation two</div>
+            <div class="button-description">Snake habitats and preservation</div>
         </div>
         
         <!-- Button 3 -->
@@ -86,7 +118,14 @@
             <button class="audio-button" onclick="playAudio('Buttonn3.m4a', this)">
                 Play Clip 3
             </button>
-            <div class="button-description">placeholder - conservation three</div>
+            <div class="button-description">How you can help protect snakes</div>
+        </div>
+        
+        <!-- BOTTOM PARAGRAPH - Add your text here -->
+        <div class="bottom-paragraph">
+            🐍 Remember: Snakes are vital to our ecosystem! 
+            Listen to these clips to learn why we need to protect them. 
+            Thank you for caring about snake conservation! 🐍
         </div>
         
         <!-- Status message (hidden by default) -->
