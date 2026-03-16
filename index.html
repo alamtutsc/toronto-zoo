@@ -5,11 +5,17 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            max-width: 800px;  /* Made this bigger */
+            max-width: 800px;
             margin: 50px auto;
             padding: 20px;
             text-align: center;
-            background-color: #f0f0f0;
+            /* Change background to image */
+            background-image: url('snakebg.jpg');
+            background-size: cover;  /* Makes image cover entire background */
+            background-position: center;  /* Centers the image */
+            background-repeat: no-repeat;  /* Prevents image from tiling */
+            background-attachment: fixed;  /* Keeps image fixed when scrolling */
+            min-height: 100vh;  /* Ensures background covers full height */
         }
         
         h1 {
@@ -18,7 +24,6 @@
             font-size: 32px;
         }
         
-        /* New style for the intro paragraph */
         .intro-paragraph {
             color: #555;
             font-size: 16px;
@@ -28,7 +33,6 @@
             font-style: italic;
         }
         
-        /* New style for the bottom paragraph */
         .bottom-paragraph {
             color: #555;
             font-size: 15px;
@@ -43,12 +47,12 @@
             background-color: #4CAF50;
             border: none;
             color: white;
-            padding: 25px 50px;  /* Made buttons bigger */
-            margin: 15px;  /* More space between buttons */
-            font-size: 20px;  /* Bigger text */
+            padding: 25px 50px;
+            margin: 15px;
+            font-size: 20px;
             border-radius: 10px;
             cursor: pointer;
-            width: 300px;  /* Wider buttons */
+            width: 300px;
             transition: background-color 0.3s;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
@@ -80,9 +84,11 @@
         
         .container {
             background-color: white;
-            padding: 40px;  /* More padding inside the box */
-            border-radius: 20px;  /* Slightly more rounded corners */
-            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);  /* Slightly darker shadow */
+            /* Optional: add a semi-transparent background instead of solid white */
+            /* background-color: rgba(255, 255, 255, 0.95); */  /* 95% opaque white */
         }
     </style>
 </head>
