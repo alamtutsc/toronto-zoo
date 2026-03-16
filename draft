@@ -67,7 +67,7 @@
         
         <!-- Button 1 -->
         <div>
-            <button class="audio-button" onclick="playAudio('clip1.mp3', this)">
+            <button class="audio-button" onclick="playAudio('Button 1.m4a', this)">
                 Play Clip 1
             </button>
             <div class="button-description">Funny sound effect</div>
@@ -75,7 +75,7 @@
         
         <!-- Button 2 -->
         <div>
-            <button class="audio-button" onclick="playAudio('clip2.mp3', this)">
+            <button class="audio-button" onclick="playAudio('Buttonn2.m4a', this)">
                 Play Clip 2
             </button>
             <div class="button-description">Music sample</div>
@@ -83,7 +83,7 @@
         
         <!-- Button 3 -->
         <div>
-            <button class="audio-button" onclick="playAudio('clip3.mp3', this)">
+            <button class="audio-button" onclick="playAudio('Buttonn3.m4a', this)">
                 Play Clip 3
             </button>
             <div class="button-description">Voice recording</div>
